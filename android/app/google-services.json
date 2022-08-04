@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "162112303748",
+    "project_id": "bootcamp-georgeta",
+    "storage_bucket": "bootcamp-georgeta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162112303748:android:9a8009eae6130306ba88d1",
+        "android_client_info": {
+          "package_name": "com.example.flutterfire_auth_georgeta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162112303748-p72sd7k0ktdvmim6nbbgu0tnf64vomqn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCydul-_XEKL2o_LldFG0LTbYRWcbkyvu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162112303748-p72sd7k0ktdvmim6nbbgu0tnf64vomqn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
