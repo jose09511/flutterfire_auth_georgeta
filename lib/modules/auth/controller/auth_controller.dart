@@ -9,14 +9,14 @@ class AuthController extends GetxController {
   FirebaseAuthServices firebaseAuthServices = FirebaseAuthServices();
   @override
   void onReady() {
-    ever(firebaseUser, handleAuthChanged(firebaseUser));
+    ever(firebaseUser, handleAuthChanged);
 
     firebaseUser.bindStream(firebaseAuthServices.user);
 
     super.onReady();
   }
 
-  handleAuthChanged(Rxn<User>? firebaseUser) async {
+  handleAuthChanged(firebaseUser) async {
     if (firebaseUser == null) {
       Get.offAll(() => const LoginScreen());
     } else {
