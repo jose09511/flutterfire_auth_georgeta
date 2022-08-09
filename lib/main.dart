@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterfire_auth_georgeta/firebase_options.dart';
+import 'package:flutterfire_auth_georgeta/modules/auth/controller/auth_controller.dart';
 import 'package:flutterfire_auth_georgeta/routes/app_pages.dart';
 import 'package:get/get.dart';
 
@@ -9,7 +10,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
+  Get.put<AuthController>(AuthController());
   runApp(const MyApp());
 }
 

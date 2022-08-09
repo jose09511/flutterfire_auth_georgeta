@@ -1,6 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:flutterfire_auth_georgeta/modules/auth/bindings/auth_binding.dart';
+import 'package:flutterfire_auth_georgeta/modules/auth/screens/email_sign_in_screen.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/screens/login_screen.dart';
 import 'package:flutterfire_auth_georgeta/modules/home/screens/home_screen.dart';
 import 'package:flutterfire_auth_georgeta/modules/home/screens/initial_screen.dart';
@@ -24,7 +25,10 @@ class AppPages {
     GetPage(
       name: Routes.INITIAL,
       page: () => const InitialScreen(),
-      binding: AuthBinding(),
+    ),
+    GetPage(
+      name: Routes.EMAILSIGNIN,
+      page: () => EmailSignInScreen(),
     ),
   ];
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfire_auth_georgeta/components/buttons/email_sign_in_button.dart';
+import 'package:flutterfire_auth_georgeta/modules/auth/screens/email_sign_in_screen.dart';
+import 'package:flutterfire_auth_georgeta/routes/app_routes.dart';
+import 'package:get/get.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -25,7 +28,9 @@ class LoginScreen extends StatelessWidget {
               children: [
                 Container(
                   child: EmailSignInButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(Routes.EMAILSIGNIN);
+                    },
                   ),
                 )
               ],
