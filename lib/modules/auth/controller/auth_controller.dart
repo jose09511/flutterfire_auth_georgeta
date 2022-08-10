@@ -9,7 +9,9 @@ class AuthController extends GetxController {
   FirebaseAuthServices firebaseAuthServices = FirebaseAuthServices();
   static AuthController to = Get.find();
   TextEditingController emailController = TextEditingController();
+  TextEditingController resetEmailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController repeatPasswordController = TextEditingController();
 
   @override
   void onReady() {
@@ -39,6 +41,12 @@ class AuthController extends GetxController {
     firebaseAuthServices.registerWithEmailAndPassword(
       email: emailController.text,
       password: passwordController.text,
+    );
+  }
+
+  sendPasswordResetEmail() {
+    firebaseAuthServices.sendPasswordResetEmail(
+      email: emailController.text,
     );
   }
 }

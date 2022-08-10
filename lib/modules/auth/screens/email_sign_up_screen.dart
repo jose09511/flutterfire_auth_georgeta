@@ -6,6 +6,7 @@ import 'package:flutterfire_auth_georgeta/helpers/validators.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/controller/auth_controller.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/screens/email_sign_in_screen.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/screens/login_screen.dart';
+import 'package:flutterfire_auth_georgeta/modules/auth/screens/reset_password_screen.dart';
 import 'package:flutterfire_auth_georgeta/widgets/logo_graphic_header_widget.dart';
 import 'package:get/get.dart';
 
@@ -62,10 +63,27 @@ class EmailSignUpScreen extends StatelessWidget {
                   const SizedBox(
                     height: 24,
                   ),
+                  FormInputFieldWithIcon(
+                    controller: authController.repeatPasswordController,
+                    iconPrefix: Icons.lock,
+                    maxLines: 1,
+                    labelText: 'Repetir contraseña',
+                    validator: Validator().password,
+                    keyboardType: TextInputType.emailAddress,
+                    obscureText: true,
+                    onChanged: (value) => null,
+                    onSaved: (value) =>
+                        authController.repeatPasswordController.text = value!,
+                  ),
+                  const SizedBox(
+                    height: 24,
+                  ),
                   PrimaryButton(
                     labelText: "ENVIAR",
                     onPressed: () async {
-                      if (_formKey.currentState!.validate()) {
+                      if (_formKey.currentState!.validate() &&
+                          authController.repeatPasswordController.text ==
+                              authController.passwordController.text) {
                         authController.registerWithEmailAndPassword();
                       }
                     },
@@ -75,6 +93,9 @@ class EmailSignUpScreen extends StatelessWidget {
                     onPressed: () => Get.off(
                       EmailSignInScreen(),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 24,
                   ),
                 ],
               ),

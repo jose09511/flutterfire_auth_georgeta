@@ -4,6 +4,7 @@ import 'package:flutterfire_auth_georgeta/components/buttons/email_sign_up_butto
 import 'package:flutterfire_auth_georgeta/components/buttons/label_button.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/screens/email_sign_up_screen.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/screens/login_screen.dart';
+import 'package:flutterfire_auth_georgeta/modules/auth/screens/reset_password_screen.dart';
 import 'package:get/get.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -37,7 +38,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 LabelButton(
                     labelText: '¿Ya tienes cuenta? ¡Inicia sesión!',
-                    onPressed: () => Get.offAll(const LoginScreen()))
+                    onPressed: () => Get.offAll(const LoginScreen())),
               ],
             ),
           )

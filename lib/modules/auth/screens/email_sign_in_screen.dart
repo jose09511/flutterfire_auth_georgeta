@@ -6,6 +6,7 @@ import 'package:flutterfire_auth_georgeta/helpers/validators.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/controller/auth_controller.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/screens/email_sign_up_screen.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/screens/register_screen.dart';
+import 'package:flutterfire_auth_georgeta/modules/auth/screens/reset_password_screen.dart';
 import 'package:flutterfire_auth_georgeta/widgets/logo_graphic_header_widget.dart';
 import 'package:get/get.dart';
 
@@ -73,6 +74,10 @@ class EmailSignInScreen extends StatelessWidget {
                   LabelButton(
                     labelText: '¿Aún no tienes cuenta? ¡Registrate!',
                     onPressed: () => Get.off(EmailSignUpScreen()),
+                  ),
+                  LabelButton(
+                    labelText: '¿Has olvidado tu contraseña?',
+                    onPressed: () => Get.to(ResetPasswordScreen()),
                   )
                 ],
               ),
