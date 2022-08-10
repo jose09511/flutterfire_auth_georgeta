@@ -4,15 +4,15 @@ import 'package:flutterfire_auth_georgeta/components/buttons/primary_button.dart
 import 'package:flutterfire_auth_georgeta/components/forms/form_input_field_with_icon.dart';
 import 'package:flutterfire_auth_georgeta/helpers/validators.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/controller/auth_controller.dart';
-import 'package:flutterfire_auth_georgeta/modules/auth/screens/email_sign_up_screen.dart';
-import 'package:flutterfire_auth_georgeta/modules/auth/screens/register_screen.dart';
+import 'package:flutterfire_auth_georgeta/modules/auth/screens/email_sign_in_screen.dart';
+import 'package:flutterfire_auth_georgeta/modules/auth/screens/login_screen.dart';
 import 'package:flutterfire_auth_georgeta/widgets/logo_graphic_header_widget.dart';
 import 'package:get/get.dart';
 
-class EmailSignInScreen extends StatelessWidget {
+class EmailSignUpScreen extends StatelessWidget {
   final AuthController authController = AuthController.to;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  EmailSignInScreen({Key? key}) : super(key: key);
+  EmailSignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -63,17 +63,19 @@ class EmailSignInScreen extends StatelessWidget {
                     height: 24,
                   ),
                   PrimaryButton(
-                    labelText: "INICIAR SESIÓN",
+                    labelText: "ENVIAR",
                     onPressed: () async {
                       if (_formKey.currentState!.validate()) {
-                        authController.signInWithEmailAndPassword();
+                        authController.registerWithEmailAndPassword();
                       }
                     },
                   ),
                   LabelButton(
-                    labelText: '¿Aún no tienes cuenta? ¡Registrate!',
-                    onPressed: () => Get.off(EmailSignUpScreen()),
-                  )
+                    labelText: '¿Ya tienes cuenta? ¡Inicia sesión!',
+                    onPressed: () => Get.off(
+                      EmailSignInScreen(),
+                    ),
+                  ),
                 ],
               ),
             ),

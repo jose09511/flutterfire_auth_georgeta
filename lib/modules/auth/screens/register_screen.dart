@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfire_auth_georgeta/components/buttons/email_sign_in_button.dart';
+import 'package:flutterfire_auth_georgeta/components/buttons/email_sign_up_button.dart';
 import 'package:flutterfire_auth_georgeta/components/buttons/label_button.dart';
-import 'package:flutterfire_auth_georgeta/modules/auth/screens/email_sign_in_screen.dart';
-import 'package:flutterfire_auth_georgeta/modules/auth/screens/register_screen.dart';
-import 'package:flutterfire_auth_georgeta/routes/app_routes.dart';
+import 'package:flutterfire_auth_georgeta/modules/auth/screens/email_sign_up_screen.dart';
+import 'package:flutterfire_auth_georgeta/modules/auth/screens/login_screen.dart';
 import 'package:get/get.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,18 +28,16 @@ class LoginScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               children: [
-                EmailSignInButton(
-                  onPressed: () {
-                    Get.to(EmailSignInScreen());
-                  },
-                ),
-                const SizedBox(
-                  height: 200,
+                Container(
+                  child: EmailSignUpButton(
+                    onPressed: () {
+                      Get.to(EmailSignUpScreen());
+                    },
+                  ),
                 ),
                 LabelButton(
-                  labelText: '¿Aún no tienes cuenta? ¡Registrate!',
-                  onPressed: () => Get.offAll(RegisterScreen()),
-                )
+                    labelText: '¿Ya tienes cuenta? ¡Inicia sesión!',
+                    onPressed: () => Get.offAll(const LoginScreen()))
               ],
             ),
           )

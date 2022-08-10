@@ -34,4 +34,11 @@ class AuthController extends GetxController {
       password: passwordController.text,
     );
   }
+
+  registerWithEmailAndPassword() {
+    firebaseAuthServices.registerWithEmailAndPassword(
+      email: emailController.text,
+      password: passwordController.text,
+    );
+  }
 }
