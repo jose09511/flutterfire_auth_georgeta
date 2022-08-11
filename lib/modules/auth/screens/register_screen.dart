@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfire_auth_georgeta/components/buttons/email_sign_in_button.dart';
 import 'package:flutterfire_auth_georgeta/components/buttons/email_sign_up_button.dart';
+import 'package:flutterfire_auth_georgeta/components/buttons/google_auth_button.dart';
 import 'package:flutterfire_auth_georgeta/components/buttons/label_button.dart';
+import 'package:flutterfire_auth_georgeta/modules/auth/controller/auth_controller.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/screens/email_sign_up_screen.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/screens/login_screen.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/screens/reset_password_screen.dart';
 import 'package:get/get.dart';
 
 class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+  final AuthController authController = AuthController.to;
+  RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +39,20 @@ class RegisterScreen extends StatelessWidget {
                     },
                   ),
                 ),
+                const SizedBox(
+                  height: 24,
+                ),
+                GoogleSignInButton(
+                    text: 'Registrarse con Google',
+                    onPressed: () {
+                      authController.authWithGoogle();
+                    }),
+                const SizedBox(
+                  height: 24,
+                ),
                 LabelButton(
                     labelText: '¿Ya tienes cuenta? ¡Inicia sesión!',
-                    onPressed: () => Get.offAll(const LoginScreen())),
+                    onPressed: () => Get.offAll(LoginScreen())),
               ],
             ),
           )

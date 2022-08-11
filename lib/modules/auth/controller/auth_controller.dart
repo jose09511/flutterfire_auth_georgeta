@@ -49,4 +49,8 @@ class AuthController extends GetxController {
       email: emailController.text,
     );
   }
+
+  authWithGoogle() {
+    firebaseAuthServices.authWithGoogle();
+  }
 }

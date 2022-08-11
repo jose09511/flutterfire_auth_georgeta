@@ -1,5 +1,4 @@
 // ignore_for_file: constant_identifier_names
-
 import 'package:flutterfire_auth_georgeta/modules/auth/bindings/auth_binding.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/screens/email_sign_in_screen.dart';
 import 'package:flutterfire_auth_georgeta/modules/auth/screens/login_screen.dart';
@@ -16,7 +15,7 @@ class AppPages {
   static final routes = [
     GetPage(
       name: Routes.LOGIN,
-      page: () => const LoginScreen(),
+      page: () => LoginScreen(),
     ),
     GetPage(
       name: Routes.HOME,
